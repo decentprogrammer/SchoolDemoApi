@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SchoolDemoApi.Data.Models;
 using SchoolDemoApi.Services;
@@ -6,6 +7,7 @@ namespace SchoolDemoApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    
     public class SchoolController : ControllerBase
     {
         private ISchoolService _schoolService;
@@ -15,8 +17,7 @@ namespace SchoolDemoApi.Controllers
             _schoolService = schoolService;
         }
 
-
-        [HttpGet]
+        [HttpGet, Authorize]        
         public async Task<JsonResult> GetSchools()
         {
             var schools = (await _schoolService.GetSchools(false)).Select(x => new
@@ -33,8 +34,8 @@ namespace SchoolDemoApi.Controllers
         }
 
 
-
-        [HttpGet("{id}")]
+       
+        [HttpGet("{id}"), Authorize]
         public async Task<JsonResult> GetSchoolById(int id)
         {
             var school = (await _schoolService.GetSchoolById(id, false));            
