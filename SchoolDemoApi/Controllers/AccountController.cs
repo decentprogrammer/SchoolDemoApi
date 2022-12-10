@@ -28,7 +28,7 @@ namespace SchoolDemoApi.Controllers
         }
 
         [HttpPost]
-        [Route("login")]
+        [Route("Login")]
         public async Task<IActionResult> Login([FromBody] Login model)
         {
             var user = await _userManager.FindByNameAsync(model.Username);
@@ -57,9 +57,9 @@ namespace SchoolDemoApi.Controllers
             }
             return Unauthorized();
         }
-        /*
+        
         [HttpPost]
-        [Route("register")]
+        [Route("Register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
             var userExists = await _userManager.FindByNameAsync(model.Username);
@@ -70,7 +70,9 @@ namespace SchoolDemoApi.Controllers
             {
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Username
+                UserName = model.Username,
+                PhoneNumber = model.Password,
+                SectionId = 1
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
@@ -78,7 +80,7 @@ namespace SchoolDemoApi.Controllers
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
-
+        /*
         [HttpPost]
         [Route("register-admin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterModel model)
