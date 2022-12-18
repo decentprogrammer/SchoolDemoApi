@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class BaselinePst
     {
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public string? Elevation { get; set; }
         public float Latitute { get; set; }
         public float Longitude { get; set; }

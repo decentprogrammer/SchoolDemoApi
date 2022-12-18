@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class Baseline
     {
@@ -12,7 +12,7 @@ namespace SchoolDemoApi.Data.Models
         }
 
         public short Blid { get; set; }
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
         public string TeacherName { get; set; } = null!;

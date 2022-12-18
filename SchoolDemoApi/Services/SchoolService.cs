@@ -1,4 +1,4 @@
-﻿using SchoolDemoApi.Data.Models;
+﻿using SchoolDemoApi.Data.Entities;
 using SchoolDemoApi.Data.Repositories;
 
 namespace SchoolDemoApi.Services

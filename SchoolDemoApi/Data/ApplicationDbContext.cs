@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using SchoolDemoApi.Data.Models;
+using SchoolDemoApi.Data.Entities;
 
 namespace SchoolDemoApi.Data
 {
@@ -209,7 +209,7 @@ namespace SchoolDemoApi.Data
 
                 entity.Property(e => e.LandownerAgreedVld).HasColumnName("LandownerAgreedVLD");
 
-                entity.Property(e => e.SchoolSid).HasColumnName("SchoolSID");
+                entity.Property(e => e.SchoolSID).HasColumnName("SchoolSID");
 
                 entity.Property(e => e.UpdatedDate).HasColumnName("updatedDate");
 
@@ -217,7 +217,7 @@ namespace SchoolDemoApi.Data
 
                 entity.HasOne(d => d.SchoolS)
                     .WithMany(p => p.BaselineEsses)
-                    .HasForeignKey(d => d.SchoolSid);
+                    .HasForeignKey(d => d.SchoolSID);
             });
 
             modelBuilder.Entity<BaselinePst>(entity =>
@@ -543,7 +543,7 @@ namespace SchoolDemoApi.Data
                     .HasColumnName("NonFunctionalVIPToiletForBoys")
                     .IsFixedLength();
 
-                entity.Property(e => e.SchoolSid).HasColumnName("SchoolSID");
+                entity.Property(e => e.SchoolSID).HasColumnName("SchoolSID");
 
                 entity.Property(e => e.SiteArea).HasColumnType("decimal(18, 2)");
 
@@ -559,7 +559,7 @@ namespace SchoolDemoApi.Data
 
                 entity.HasOne(d => d.SchoolS)
                     .WithMany(p => p.BaselinePstOlds)
-                    .HasForeignKey(d => d.SchoolSid)
+                    .HasForeignKey(d => d.SchoolSID)
                     .HasConstraintName("FK_BaselinePst_Schools_SchoolSID");
             });
 
@@ -578,13 +578,13 @@ namespace SchoolDemoApi.Data
 
                 entity.Property(e => e.RoomWidth).HasColumnType("decimal(18, 2)");
 
-                entity.Property(e => e.SchoolSid).HasColumnName("SchoolSID");
+                entity.Property(e => e.SchoolSID).HasColumnName("SchoolSID");
 
                 entity.Property(e => e.Sid).HasColumnName("SID");
 
                 entity.HasOne(d => d.SchoolS)
                     .WithMany(p => p.BaselinePstRooms)
-                    .HasForeignKey(d => d.SchoolSid);
+                    .HasForeignKey(d => d.SchoolSID);
             });
 
             modelBuilder.Entity<BlbuildingFacility>(entity =>
@@ -764,13 +764,13 @@ namespace SchoolDemoApi.Data
 
                 entity.Property(e => e.IsRiskGbv).HasColumnName("IsRiskGBV");
 
-                entity.Property(e => e.SchoolSid).HasColumnName("SchoolSID");
+                entity.Property(e => e.SchoolSID).HasColumnName("SchoolSID");
 
                 entity.Property(e => e.UpdatedDate).HasColumnName("updatedDate");
 
                 entity.HasOne(d => d.SchoolS)
                     .WithMany(p => p.Essconstructions)
-                    .HasForeignKey(d => d.SchoolSid);
+                    .HasForeignKey(d => d.SchoolSID);
             });
 
             modelBuilder.Entity<School>(entity =>
@@ -823,40 +823,36 @@ namespace SchoolDemoApi.Data
                     .HasColumnName("PostID");
             });
 
-            modelBuilder.Entity<Tool5>(entity =>
+            modelBuilder.Entity<StudentEnrollment>(entity =>
             {
-                entity.HasKey(e => new { e.SchoolId, e.Quarter });
+                entity.HasKey(e => new { e.SchoolSID, e.Quarter });
 
-                entity.ToTable("Tool5");
+                entity.ToTable("StudentEnrollment");
 
-                entity.Property(e => e.SchoolId).HasColumnName("SchoolID");
-
-                entity.Property(e => e.SchoolSid).HasColumnName("SchoolSID");
+                entity.Property(e => e.SchoolSID).HasColumnName("SchoolSID");
 
                 entity.HasOne(d => d.SchoolS)
-                    .WithMany(p => p.Tool5s)
-                    .HasForeignKey(d => d.SchoolSid);
+                    .WithMany(p => p.StudentEnrollments)
+                    .HasForeignKey(d => d.SchoolSID);
             });
 
-            modelBuilder.Entity<Tool5Detail>(entity =>
+            modelBuilder.Entity<StudentEnrollmentDetail>(entity =>
             {
-                entity.HasKey(e => new { e.SchoolId, e.Quarter, e.ClassId });
+                entity.HasKey(e => new { e.SchoolSID, e.Quarter, e.ClassId });
 
-                entity.ToTable("Tool5Detail");
-
-                entity.Property(e => e.SchoolId).HasColumnName("SchoolID");
+                entity.ToTable("StudentEnrollmentDetail");
 
                 entity.Property(e => e.ClassId).HasColumnName("ClassID");
 
-                entity.Property(e => e.SchoolSid).HasColumnName("SchoolSID");
+                entity.Property(e => e.SchoolSID).HasColumnName("SchoolSID");
 
                 entity.HasOne(d => d.SchoolS)
-                    .WithMany(p => p.Tool5Details)
-                    .HasForeignKey(d => d.SchoolSid);
+                    .WithMany(p => p.StudentEnrollmentDetails)
+                    .HasForeignKey(d => d.SchoolSID);
 
-                entity.HasOne(d => d.Tool5)
-                    .WithMany(p => p.Tool5Details)
-                    .HasForeignKey(d => new { d.SchoolId, d.Quarter });
+                entity.HasOne(d => d.StudentEnrollment)
+                    .WithMany(p => p.StudentEnrollmentDetails)
+                    .HasForeignKey(d => new { d.SchoolSID, d.Quarter });
             });
 
         }
@@ -881,7 +877,7 @@ namespace SchoolDemoApi.Data
         public DbSet<School> Schools { get; set; }
         public DbSet<Section> Sections { get; set; }
         public DbSet<TeacherPost> TeacherPosts { get; set; }
-        public DbSet<Tool5> Tool5s { get; set; }
-        public DbSet<Tool5Detail> Tool5Details { get; set; }
+        public DbSet<StudentEnrollment> StudentEnrollments { get; set; }
+        public DbSet<StudentEnrollmentDetail> StudentEnrollmentDetails { get; set; }
     }
 }

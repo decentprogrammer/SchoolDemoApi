@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class AnnEnrollment
     {

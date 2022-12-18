@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class BaselineEss
     {
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public bool? SignificantLandDisturbance { get; set; }
         public bool? DestructionVegetation { get; set; }
         public bool? EncroachmentUrban { get; set; }
@@ -75,7 +75,7 @@ namespace SchoolDemoApi.Data.Models
         public bool Verified { get; set; }
         public string? VerifiedBy { get; set; }
         public DateTime VerifiedDate { get; set; }
-        public short? SchoolSid { get; set; }
+        public short? SchoolSID { get; set; }
         public DateTime VisitDate { get; set; }
         public bool? ItLab { get; set; }
         public bool? ItLabFire { get; set; }

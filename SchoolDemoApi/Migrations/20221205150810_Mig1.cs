@@ -976,7 +976,7 @@ namespace SchoolDemoApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tool5",
+                name: "StudentEnrollment",
                 columns: table => new
                 {
                     SchoolID = table.Column<int>(type: "int", nullable: false),
@@ -996,9 +996,9 @@ namespace SchoolDemoApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tool5", x => new { x.SchoolID, x.Quarter });
+                    table.PrimaryKey("PK_StudentEnrollment", x => new { x.SchoolID, x.Quarter });
                     table.ForeignKey(
-                        name: "FK_Tool5_Schools_SchoolSID",
+                        name: "FK_StudentEnrollment_Schools_SchoolSID",
                         column: x => x.SchoolSID,
                         principalTable: "Schools",
                         principalColumn: "SID");
@@ -1071,7 +1071,7 @@ namespace SchoolDemoApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tool5Detail",
+                name: "StudentEnrollmentDetail",
                 columns: table => new
                 {
                     SchoolID = table.Column<int>(type: "int", nullable: false),
@@ -1091,16 +1091,16 @@ namespace SchoolDemoApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tool5Detail", x => new { x.SchoolID, x.Quarter, x.ClassID });
+                    table.PrimaryKey("PK_StudentEnrollmentDetail", x => new { x.SchoolID, x.Quarter, x.ClassID });
                     table.ForeignKey(
-                        name: "FK_Tool5Detail_Schools_SchoolSID",
+                        name: "FK_StudentEnrollmentDetail_Schools_SchoolSID",
                         column: x => x.SchoolSID,
                         principalTable: "Schools",
                         principalColumn: "SID");
                     table.ForeignKey(
-                        name: "FK_Tool5Detail_Tool5_SchoolID_Quarter",
+                        name: "FK_StudentEnrollmentDetail_StudentEnrollment_SchoolID_Quarter",
                         columns: x => new { x.SchoolID, x.Quarter },
-                        principalTable: "Tool5",
+                        principalTable: "StudentEnrollment",
                         principalColumns: new[] { "SchoolID", "Quarter" },
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1270,13 +1270,13 @@ namespace SchoolDemoApi.Migrations
                 column: "SchoolSID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tool5_SchoolSID",
-                table: "Tool5",
+                name: "IX_StudentEnrollment_SchoolSID",
+                table: "StudentEnrollment",
                 column: "SchoolSID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tool5Detail_SchoolSID",
-                table: "Tool5Detail",
+                name: "IX_StudentEnrollmentDetail_SchoolSID",
+                table: "StudentEnrollmentDetail",
                 column: "SchoolSID");
         }
 
@@ -1343,7 +1343,7 @@ namespace SchoolDemoApi.Migrations
                 name: "EssSiting");
 
             migrationBuilder.DropTable(
-                name: "Tool5Detail");
+                name: "StudentEnrollmentDetail");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -1358,7 +1358,7 @@ namespace SchoolDemoApi.Migrations
                 name: "TeacherPosts");
 
             migrationBuilder.DropTable(
-                name: "Tool5");
+                name: "StudentEnrollment");
 
             migrationBuilder.DropTable(
                 name: "Section");
