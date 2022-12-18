@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SchoolDemoApi.ViewModels
+namespace SchoolDemoApi.Models
 {
     public class RegisterModel
     {

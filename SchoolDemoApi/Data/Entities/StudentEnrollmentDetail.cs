@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
-    public partial class Tool5Detail
+    public partial class StudentEnrollmentDetail
     {
-        public int SchoolId { get; set; }
         public short Quarter { get; set; }
         public short ClassId { get; set; }
         public short NewEnrolltGirls { get; set; }
@@ -18,9 +17,9 @@ namespace SchoolDemoApi.Data.Models
         public DateTime? CreatedDate { get; set; }
         public string? UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public short? SchoolSid { get; set; }
+        public short? SchoolSID { get; set; }
 
         public virtual School? SchoolS { get; set; }
-        public virtual Tool5 Tool5 { get; set; } = null!;
+        public virtual StudentEnrollment StudentEnrollment { get; set; } = null!;
     }
 }

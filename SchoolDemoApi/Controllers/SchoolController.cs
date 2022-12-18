@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SchoolDemoApi.Data.Models;
+using SchoolDemoApi.Data.Entities;
 using SchoolDemoApi.Services;
 
 namespace SchoolDemoApi.Controllers

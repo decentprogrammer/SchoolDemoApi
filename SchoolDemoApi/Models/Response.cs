@@ -1,4 +1,4 @@
-﻿namespace SchoolDemoApi.ViewModels
+﻿namespace SchoolDemoApi.Models
 {
     public class Response
     {

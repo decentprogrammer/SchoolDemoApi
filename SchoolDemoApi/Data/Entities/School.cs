@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class School
     {
@@ -11,11 +11,11 @@ namespace SchoolDemoApi.Data.Models
             BaselinePstOlds = new HashSet<BaselinePstOld>();
             BaselinePstRooms = new HashSet<BaselinePstRoom>();
             Essconstructions = new HashSet<Essconstruction>();
-            Tool5Details = new HashSet<Tool5Detail>();
-            Tool5s = new HashSet<Tool5>();
+            StudentEnrollmentDetails = new HashSet<StudentEnrollmentDetail>();
+            StudentEnrollments = new HashSet<StudentEnrollment>();
         }
 
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public string? Bemis { get; set; }
         public string? SchoolName { get; set; }
         public string? District { get; set; }
@@ -41,7 +41,7 @@ namespace SchoolDemoApi.Data.Models
         public virtual ICollection<BaselinePstOld> BaselinePstOlds { get; set; }
         public virtual ICollection<BaselinePstRoom> BaselinePstRooms { get; set; }
         public virtual ICollection<Essconstruction> Essconstructions { get; set; }
-        public virtual ICollection<Tool5Detail> Tool5Details { get; set; }
-        public virtual ICollection<Tool5> Tool5s { get; set; }
+        public virtual ICollection<StudentEnrollmentDetail> StudentEnrollmentDetails { get; set; }
+        public virtual ICollection<StudentEnrollment> StudentEnrollments { get; set; }
     }
 }

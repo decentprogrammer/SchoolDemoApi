@@ -157,7 +157,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.AnnBemiscode", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.AnnBemiscode", b =>
                 {
                     b.Property<int>("Bemisid")
                         .ValueGeneratedOnAdd()
@@ -199,7 +199,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("AnnBEMISCodes", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.AnnBemiscodeDetail", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.AnnBemiscodeDetail", b =>
                 {
                     b.Property<int>("AnnualBemiscodeDetailId")
                         .ValueGeneratedOnAdd()
@@ -228,7 +228,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("AnnBEMISCodeDetails", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.AnnEnrollment", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.AnnEnrollment", b =>
                 {
                     b.Property<int>("AnnualEnrolId")
                         .ValueGeneratedOnAdd()
@@ -278,7 +278,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("AnnEnrollments");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.AnnEnrollmentDetail", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.AnnEnrollmentDetail", b =>
                 {
                     b.Property<int>("AnnualEnrollmentDetails")
                         .ValueGeneratedOnAdd()
@@ -321,7 +321,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("AnnEnrollmentDetails");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.AppUser", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.AppUser", b =>
                 {
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
@@ -397,7 +397,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("AppUser", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Baseline", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Baseline", b =>
                 {
                     b.Property<short>("Blid")
                         .HasColumnType("smallint")
@@ -587,7 +587,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("Baselines");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselineEss", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselineEss", b =>
                 {
                     b.Property<short>("Sid")
                         .HasColumnType("smallint")
@@ -748,7 +748,7 @@ namespace SchoolDemoApi.Migrations
                     b.Property<bool?>("ResidualWastes")
                         .HasColumnType("bit");
 
-                    b.Property<short?>("SchoolSid")
+                    b.Property<short?>("SchoolSID")
                         .HasColumnType("smallint")
                         .HasColumnName("SchoolSID");
 
@@ -823,12 +823,12 @@ namespace SchoolDemoApi.Migrations
 
                     b.HasKey("Sid");
 
-                    b.HasIndex("SchoolSid");
+                    b.HasIndex("SchoolSID");
 
                     b.ToTable("BaselineEss", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselinePst", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselinePst", b =>
                 {
                     b.Property<short>("Sid")
                         .HasColumnType("smallint")
@@ -1244,7 +1244,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("BaselinePst", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselinePstOld", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselinePstOld", b =>
                 {
                     b.Property<short>("Sid")
                         .HasColumnType("smallint")
@@ -1756,7 +1756,7 @@ namespace SchoolDemoApi.Migrations
                     b.Property<string>("ReasonForNonFunctionalToilet")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<short?>("SchoolSid")
+                    b.Property<short?>("SchoolSID")
                         .HasColumnType("smallint")
                         .HasColumnName("SchoolSID");
 
@@ -1852,12 +1852,12 @@ namespace SchoolDemoApi.Migrations
                     b.HasKey("Sid")
                         .HasName("PK_BaselinePst");
 
-                    b.HasIndex("SchoolSid");
+                    b.HasIndex("SchoolSID");
 
                     b.ToTable("BaselinePstOld", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselinePstRoom", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselinePstRoom", b =>
                 {
                     b.Property<short>("Srid")
                         .ValueGeneratedOnAdd()
@@ -1887,7 +1887,7 @@ namespace SchoolDemoApi.Migrations
                     b.Property<decimal>("RoomWidth")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<short?>("SchoolSid")
+                    b.Property<short?>("SchoolSID")
                         .HasColumnType("smallint")
                         .HasColumnName("SchoolSID");
 
@@ -1931,12 +1931,12 @@ namespace SchoolDemoApi.Migrations
                     b.HasKey("Srid")
                         .HasName("PK_BaselinePstRoom_1");
 
-                    b.HasIndex("SchoolSid");
+                    b.HasIndex("SchoolSID");
 
                     b.ToTable("BaselinePstRoom", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BlbuildingFacility", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BlbuildingFacility", b =>
                 {
                     b.Property<short>("Blid")
                         .HasColumnType("smallint")
@@ -2101,7 +2101,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("BLbuildingFacilities", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BleceComputerLab", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BleceComputerLab", b =>
                 {
                     b.Property<short>("Blid")
                         .HasColumnType("smallint")
@@ -2221,7 +2221,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("BLEceComputerLabs", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Blenrollment", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Blenrollment", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -2268,7 +2268,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("BLEnrollments", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BllibraryFurniture", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BllibraryFurniture", b =>
                 {
                     b.Property<short>("Blid")
                         .HasColumnType("smallint")
@@ -2378,7 +2378,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("BLLibraryFurnitures", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BLteacher", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BLteacher", b =>
                 {
                     b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
@@ -2430,7 +2430,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("bLTeachers", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Essconstruction", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Essconstruction", b =>
                 {
                     b.Property<short>("Sid")
                         .HasColumnType("smallint")
@@ -2550,7 +2550,7 @@ namespace SchoolDemoApi.Migrations
                     b.Property<string>("ReasonNoSeparateToilets")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<short?>("SchoolSid")
+                    b.Property<short?>("SchoolSID")
                         .HasColumnType("smallint")
                         .HasColumnName("SchoolSID");
 
@@ -2582,12 +2582,12 @@ namespace SchoolDemoApi.Migrations
 
                     b.HasKey("Sid");
 
-                    b.HasIndex("SchoolSid");
+                    b.HasIndex("SchoolSID");
 
                     b.ToTable("ESSConstruction", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.EssSiting", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.EssSiting", b =>
                 {
                     b.Property<short>("Sid")
                         .HasColumnType("smallint")
@@ -2755,7 +2755,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("EssSiting", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.School", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.School", b =>
                 {
                     b.Property<short>("Sid")
                         .HasColumnType("smallint")
@@ -2839,7 +2839,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("Schools");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Section", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Section", b =>
                 {
                     b.Property<int>("SectionId")
                         .ValueGeneratedOnAdd()
@@ -2855,7 +2855,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("Section", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.TeacherPost", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.TeacherPost", b =>
                 {
                     b.Property<short>("PostId")
                         .HasColumnType("smallint")
@@ -2872,7 +2872,7 @@ namespace SchoolDemoApi.Migrations
                     b.ToTable("TeacherPosts");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Tool5", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.StudentEnrollment", b =>
                 {
                     b.Property<int>("SchoolId")
                         .HasColumnType("int")
@@ -2896,7 +2896,7 @@ namespace SchoolDemoApi.Migrations
                     b.Property<bool>("ReCollectData")
                         .HasColumnType("bit");
 
-                    b.Property<short?>("SchoolSid")
+                    b.Property<short?>("SchoolSID")
                         .HasColumnType("smallint")
                         .HasColumnName("SchoolSID");
 
@@ -2920,12 +2920,12 @@ namespace SchoolDemoApi.Migrations
 
                     b.HasKey("SchoolId", "Quarter");
 
-                    b.HasIndex("SchoolSid");
+                    b.HasIndex("SchoolSID");
 
-                    b.ToTable("Tool5", (string)null);
+                    b.ToTable("StudentEnrollment", (string)null);
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Tool5Detail", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.StudentEnrollmentDetail", b =>
                 {
                     b.Property<int>("SchoolId")
                         .HasColumnType("int")
@@ -2962,7 +2962,7 @@ namespace SchoolDemoApi.Migrations
                     b.Property<short>("NewEnrolltGirls")
                         .HasColumnType("smallint");
 
-                    b.Property<short?>("SchoolSid")
+                    b.Property<short?>("SchoolSID")
                         .HasColumnType("smallint")
                         .HasColumnName("SchoolSID");
 
@@ -2974,9 +2974,9 @@ namespace SchoolDemoApi.Migrations
 
                     b.HasKey("SchoolId", "Quarter", "ClassId");
 
-                    b.HasIndex("SchoolSid");
+                    b.HasIndex("SchoolSID");
 
-                    b.ToTable("Tool5Detail", (string)null);
+                    b.ToTable("StudentEnrollmentDetail", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -2990,7 +2990,7 @@ namespace SchoolDemoApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.AppUser", null)
+                    b.HasOne("SchoolDemoApi.Data.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2999,7 +2999,7 @@ namespace SchoolDemoApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.AppUser", null)
+                    b.HasOne("SchoolDemoApi.Data.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3014,7 +3014,7 @@ namespace SchoolDemoApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolDemoApi.Data.Models.AppUser", null)
+                    b.HasOne("SchoolDemoApi.Data.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3023,16 +3023,16 @@ namespace SchoolDemoApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.AppUser", null)
+                    b.HasOne("SchoolDemoApi.Data.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.AppUser", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.AppUser", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.Section", "Section")
+                    b.HasOne("SchoolDemoApi.Data.Entities.Section", "Section")
                         .WithMany("AppUsers")
                         .HasForeignKey("SectionId")
                         .IsRequired();
@@ -3040,70 +3040,70 @@ namespace SchoolDemoApi.Migrations
                     b.Navigation("Section");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselineEss", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselineEss", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SchoolS")
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SchoolS")
                         .WithMany("BaselineEsses")
-                        .HasForeignKey("SchoolSid");
+                        .HasForeignKey("SchoolSID");
 
                     b.Navigation("SchoolS");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselinePst", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselinePst", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SidNavigation")
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SidNavigation")
                         .WithOne("BaselinePst")
-                        .HasForeignKey("SchoolDemoApi.Data.Models.BaselinePst", "Sid")
+                        .HasForeignKey("SchoolDemoApi.Data.Entities.BaselinePst", "Sid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("SidNavigation");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselinePstOld", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselinePstOld", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SchoolS")
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SchoolS")
                         .WithMany("BaselinePstOlds")
-                        .HasForeignKey("SchoolSid")
+                        .HasForeignKey("SchoolSID")
                         .HasConstraintName("FK_BaselinePst_Schools_SchoolSID");
 
                     b.Navigation("SchoolS");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BaselinePstRoom", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BaselinePstRoom", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SchoolS")
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SchoolS")
                         .WithMany("BaselinePstRooms")
-                        .HasForeignKey("SchoolSid");
+                        .HasForeignKey("SchoolSID");
 
                     b.Navigation("SchoolS");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BlbuildingFacility", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BlbuildingFacility", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.Baseline", "Bl")
+                    b.HasOne("SchoolDemoApi.Data.Entities.Baseline", "Bl")
                         .WithOne("BlbuildingFacility")
-                        .HasForeignKey("SchoolDemoApi.Data.Models.BlbuildingFacility", "Blid")
+                        .HasForeignKey("SchoolDemoApi.Data.Entities.BlbuildingFacility", "Blid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Bl");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BleceComputerLab", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BleceComputerLab", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.Baseline", "Bl")
+                    b.HasOne("SchoolDemoApi.Data.Entities.Baseline", "Bl")
                         .WithOne("BleceComputerLab")
-                        .HasForeignKey("SchoolDemoApi.Data.Models.BleceComputerLab", "Blid")
+                        .HasForeignKey("SchoolDemoApi.Data.Entities.BleceComputerLab", "Blid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Bl");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Blenrollment", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Blenrollment", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.Baseline", "Bl")
+                    b.HasOne("SchoolDemoApi.Data.Entities.Baseline", "Bl")
                         .WithMany("Blenrollments")
                         .HasForeignKey("Blid")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3112,27 +3112,27 @@ namespace SchoolDemoApi.Migrations
                     b.Navigation("Bl");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BllibraryFurniture", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BllibraryFurniture", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.Baseline", "Bl")
+                    b.HasOne("SchoolDemoApi.Data.Entities.Baseline", "Bl")
                         .WithOne("BllibraryFurniture")
-                        .HasForeignKey("SchoolDemoApi.Data.Models.BllibraryFurniture", "Blid")
+                        .HasForeignKey("SchoolDemoApi.Data.Entities.BllibraryFurniture", "Blid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Bl");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.BLteacher", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.BLteacher", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.Baseline", "Bl")
+                    b.HasOne("SchoolDemoApi.Data.Entities.Baseline", "Bl")
                         .WithMany("BLteachers")
                         .HasForeignKey("Blid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_BLTeachers_Baselines_BLID");
 
-                    b.HasOne("SchoolDemoApi.Data.Models.TeacherPost", "Post")
+                    b.HasOne("SchoolDemoApi.Data.Entities.TeacherPost", "Post")
                         .WithMany("BLteachers")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3144,53 +3144,53 @@ namespace SchoolDemoApi.Migrations
                     b.Navigation("Post");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Essconstruction", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Essconstruction", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SchoolS")
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SchoolS")
                         .WithMany("Essconstructions")
-                        .HasForeignKey("SchoolSid");
+                        .HasForeignKey("SchoolSID");
 
                     b.Navigation("SchoolS");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.EssSiting", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.EssSiting", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SidNavigation")
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SidNavigation")
                         .WithOne("EssSiting")
-                        .HasForeignKey("SchoolDemoApi.Data.Models.EssSiting", "Sid")
+                        .HasForeignKey("SchoolDemoApi.Data.Entities.EssSiting", "Sid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("SidNavigation");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Tool5", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.StudentEnrollment", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SchoolS")
-                        .WithMany("Tool5s")
-                        .HasForeignKey("SchoolSid");
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SchoolS")
+                        .WithMany("StudentEnrollments")
+                        .HasForeignKey("SchoolSID");
 
                     b.Navigation("SchoolS");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Tool5Detail", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.StudentEnrollmentDetail", b =>
                 {
-                    b.HasOne("SchoolDemoApi.Data.Models.School", "SchoolS")
-                        .WithMany("Tool5Details")
-                        .HasForeignKey("SchoolSid");
+                    b.HasOne("SchoolDemoApi.Data.Entities.School", "SchoolS")
+                        .WithMany("StudentEnrollmentDetails")
+                        .HasForeignKey("SchoolSID");
 
-                    b.HasOne("SchoolDemoApi.Data.Models.Tool5", "Tool5")
-                        .WithMany("Tool5Details")
+                    b.HasOne("SchoolDemoApi.Data.Entities.StudentEnrollment", "StudentEnrollment")
+                        .WithMany("StudentEnrollmentDetails")
                         .HasForeignKey("SchoolId", "Quarter")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("SchoolS");
 
-                    b.Navigation("Tool5");
+                    b.Navigation("StudentEnrollment");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Baseline", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Baseline", b =>
                 {
                     b.Navigation("BLteachers");
 
@@ -3203,7 +3203,7 @@ namespace SchoolDemoApi.Migrations
                     b.Navigation("BllibraryFurniture");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.School", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.School", b =>
                 {
                     b.Navigation("BaselineEsses");
 
@@ -3217,24 +3217,24 @@ namespace SchoolDemoApi.Migrations
 
                     b.Navigation("Essconstructions");
 
-                    b.Navigation("Tool5Details");
+                    b.Navigation("StudentEnrollmentDetails");
 
-                    b.Navigation("Tool5s");
+                    b.Navigation("StudentEnrollments");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Section", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.Section", b =>
                 {
                     b.Navigation("AppUsers");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.TeacherPost", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.TeacherPost", b =>
                 {
                     b.Navigation("BLteachers");
                 });
 
-            modelBuilder.Entity("SchoolDemoApi.Data.Models.Tool5", b =>
+            modelBuilder.Entity("SchoolDemoApi.Data.Entities.StudentEnrollment", b =>
                 {
-                    b.Navigation("Tool5Details");
+                    b.Navigation("StudentEnrollmentDetails");
                 });
 #pragma warning restore 612, 618
         }

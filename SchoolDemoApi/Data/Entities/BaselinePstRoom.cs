@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class BaselinePstRoom
     {
         public short Srid { get; set; }
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public decimal RoomLength { get; set; }
         public decimal RoomWidth { get; set; }
         public decimal RoomHeight { get; set; }
@@ -25,7 +25,7 @@ namespace SchoolDemoApi.Data.Models
         public bool IsFlooringRequired { get; set; }
         public bool IsPlasterRequired { get; set; }
         public bool IsRoofScreedingRequired { get; set; }
-        public short? SchoolSid { get; set; }
+        public short? SchoolSID { get; set; }
 
         public virtual School? SchoolS { get; set; }
     }

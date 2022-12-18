@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SchoolDemoApi.Data.Models;
+using SchoolDemoApi.Data.Entities;
 
 namespace SchoolDemoApi.Data.Repositories
 {

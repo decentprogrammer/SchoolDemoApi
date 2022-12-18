@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class BaselinePstOld
     {
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public string? Elevation { get; set; }
         public decimal Latitute { get; set; }
         public decimal Longitude { get; set; }
@@ -89,7 +89,7 @@ namespace SchoolDemoApi.Data.Models
         public string? SiteVisitorDesignation { get; set; }
         public string? VerifiedBy { get; set; }
         public DateTime VerifiedDate { get; set; }
-        public short? SchoolSid { get; set; }
+        public short? SchoolSID { get; set; }
         public string? AccessToHandWashArea { get; set; }
         public string? Access { get; set; }
         public string? ConditionOfExistingBoundaryWall { get; set; }

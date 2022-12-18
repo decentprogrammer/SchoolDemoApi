@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
     public partial class EssSiting
     {
-        public short Sid { get; set; }
+        public short? Sid { get; set; }
         public bool? AdditionalLand { get; set; }
         public bool? LandMutation { get; set; }
         public bool? FloodPath { get; set; }

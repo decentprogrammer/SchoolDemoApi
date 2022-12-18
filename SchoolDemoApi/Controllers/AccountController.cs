@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using SchoolDemoApi.Data.Models;
-using SchoolDemoApi.ViewModels;
+using SchoolDemoApi.Data.Entities;
+using SchoolDemoApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SchoolDemoApi.Data;
-using SchoolDemoApi.Data.Models;
+using SchoolDemoApi.Data.Entities;
 using SchoolDemoApi.Data.Repositories;
 using SchoolDemoApi.Services;
 using System.Text;
@@ -81,12 +81,14 @@ builder.Services.AddSwaggerGen(option =>
 
 #region Register Repositories
 builder.Services.AddTransient<ISchoolRepository, SchoolRepository>();
+builder.Services.AddTransient<IStudentEnrollmentRepository, StudentEnrollmentRepository>();
 
 #endregion
 
 
 #region Register Services
 builder.Services.AddTransient<ISchoolService, SchoolService>();
+builder.Services.AddTransient<IStudentEnrollmentService, StudentEnrollmentService>();
 
 #endregion
 

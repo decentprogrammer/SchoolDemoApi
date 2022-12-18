@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SchoolDemoApi.Data.Models
+namespace SchoolDemoApi.Data.Entities
 {
-    public partial class Tool5
+    public partial class StudentEnrollment
     {
-        public Tool5()
+        public StudentEnrollment()
         {
-            Tool5Details = new HashSet<Tool5Detail>();
+            StudentEnrollmentDetails = new HashSet<StudentEnrollmentDetail>();
         }
 
-        public int SchoolId { get; set; }
+        public short SchoolSID { get; set; }
         public short Quarter { get; set; }
         public short Year { get; set; }
         public short ProjectYear { get; set; }
@@ -23,9 +23,8 @@ namespace SchoolDemoApi.Data.Models
         public DateTime CreatedDate { get; set; }
         public string? UpdatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public short? SchoolSid { get; set; }
 
         public virtual School? SchoolS { get; set; }
-        public virtual ICollection<Tool5Detail> Tool5Details { get; set; }
+        public virtual ICollection<StudentEnrollmentDetail> StudentEnrollmentDetails { get; set; }
     }
 }
