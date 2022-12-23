@@ -18,7 +18,8 @@ namespace SchoolDemoApi.DTOs
                 ProjectYear = model.ProjectYear,
                 ReCollectData = model.ReCollectData,
                 Verified = model.Verified,
-                VisitorName = model.VisitorName
+                VisitorName = model.VisitorName,
+                SchoolId = model.SchoolId
             };
 
             return studentEnrollment;
