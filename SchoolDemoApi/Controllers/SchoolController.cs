@@ -22,7 +22,7 @@ namespace SchoolDemoApi.Controllers
         {
             var schools = (await _schoolService.GetSchools(false)).Select(x => new
             {
-                Id = x.Sid,
+                Id = x.SchoolId,
                 Name = x.SchoolName,
                 Level = x.Level,
                 District = x.District,
@@ -41,7 +41,7 @@ namespace SchoolDemoApi.Controllers
             var school = (await _schoolService.GetSchoolById(id, false));            
             var item = new
             {
-                Id = school.Sid,
+                Id = school.SchoolId,
                 Name = school.SchoolName,
                 Level = school.Level,
                 District = school.District,

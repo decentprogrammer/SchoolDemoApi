@@ -75,8 +75,6 @@ namespace SchoolDemoApi.Data.Repositories
                 if (includeDetails)
                 {
                     items = await _context.Schools
-                                     .Include(p => p.BaselinePst)
-                                     .Include(p => p.EssSiting)
                                      .ToListAsync();
                     return items;
                 }
@@ -99,13 +97,11 @@ namespace SchoolDemoApi.Data.Repositories
                 if (includeDetails)
                 {
                     item = await _context.Schools
-                                    .Include(p => p.BaselinePst)
-                                     .Include(p => p.EssSiting)
-                                    .SingleOrDefaultAsync(x => x.Sid == id);
+                                    .SingleOrDefaultAsync(x => x.SchoolId == id);
                     return item;
                 }
 
-                item = await _context.Schools.SingleOrDefaultAsync(x => x.Sid == id);
+                item = await _context.Schools.SingleOrDefaultAsync(x => x.SchoolId == id);
                 return item;
             }
             catch (Exception ex)

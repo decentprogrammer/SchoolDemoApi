@@ -7,15 +7,10 @@ namespace SchoolDemoApi.Data.Entities
     {
         public School()
         {
-            BaselineEsses = new HashSet<BaselineEss>();
-            BaselinePstOlds = new HashSet<BaselinePstOld>();
-            BaselinePstRooms = new HashSet<BaselinePstRoom>();
-            Essconstructions = new HashSet<Essconstruction>();
-            StudentEnrollmentDetails = new HashSet<StudentEnrollmentDetail>();
             StudentEnrollments = new HashSet<StudentEnrollment>();
         }
 
-        public short? Sid { get; set; }
+        public short? SchoolId { get; set; }
         public string? Bemis { get; set; }
         public string? SchoolName { get; set; }
         public string? District { get; set; }
@@ -35,13 +30,6 @@ namespace SchoolDemoApi.Data.Entities
         public bool? IsScienceLab { get; set; }
         public bool? IsSolar { get; set; }
 
-        public virtual BaselinePst? BaselinePst { get; set; }
-        public virtual EssSiting? EssSiting { get; set; }
-        public virtual ICollection<BaselineEss> BaselineEsses { get; set; }
-        public virtual ICollection<BaselinePstOld> BaselinePstOlds { get; set; }
-        public virtual ICollection<BaselinePstRoom> BaselinePstRooms { get; set; }
-        public virtual ICollection<Essconstruction> Essconstructions { get; set; }
-        public virtual ICollection<StudentEnrollmentDetail> StudentEnrollmentDetails { get; set; }
         public virtual ICollection<StudentEnrollment> StudentEnrollments { get; set; }
     }
 }
