@@ -14,10 +14,8 @@ namespace SchoolDemoApi.DTOs
         {
             var model = new StudentEnrollmentModel()
             {
-                Date = studentEnrollment.Date,
+                VisitDate = studentEnrollment.Date,
                 ProjectYear = studentEnrollment.ProjectYear,
-                ReCollectData = studentEnrollment.ReCollectData,
-                Verified = studentEnrollment.Verified,
                 VisitorName = studentEnrollment.VisitorName
             };
 
