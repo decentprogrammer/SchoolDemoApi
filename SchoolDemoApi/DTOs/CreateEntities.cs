@@ -14,15 +14,31 @@ namespace SchoolDemoApi.DTOs
         {
             var studentEnrollment = new StudentEnrollment()
             {
-                Date = model.Date,
+                Date = model.VisitDate,
                 ProjectYear = model.ProjectYear,
-                ReCollectData = model.ReCollectData,
-                Verified = model.Verified,
                 VisitorName = model.VisitorName,
-                SchoolId = model.SchoolId
+                SchoolId = model.SchoolId,
+                Quarter = model.Quarter
             };
 
             return studentEnrollment;
+        }
+        
+        public static StudentEnrollmentDetail CreateStudentEnrollmentDetailEntity(StudentEnrollmentDetailModel model)
+        {
+            var studentEnrollmentDetail = new StudentEnrollmentDetail()
+            {
+                AttendRegBoys = model.AttendRegBoys,
+                AttendRegGirls = model.AttendRegGirls,
+                ClassId = model.ClassId,
+                HeadCountBoys = model.HeadCountBoys,
+                HeadCountGirls = model.HeadCountGirls,
+                NewEnrollBoys = model.NewEnrollBoys,
+                NewEnrolltGirls = model.NewEnrollGirls,
+                
+            };
+
+            return studentEnrollmentDetail;
         }
         
     }

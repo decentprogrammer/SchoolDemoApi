@@ -82,6 +82,7 @@ builder.Services.AddSwaggerGen(option =>
 #region Register Repositories
 builder.Services.AddTransient<ISchoolRepository, SchoolRepository>();
 builder.Services.AddTransient<IStudentEnrollmentRepository, StudentEnrollmentRepository>();
+builder.Services.AddTransient<IStudentEnrollmentDetailRepository, StudentEnrollmentDetailRepository>();
 
 #endregion
 
@@ -89,6 +90,7 @@ builder.Services.AddTransient<IStudentEnrollmentRepository, StudentEnrollmentRep
 #region Register Services
 builder.Services.AddTransient<ISchoolService, SchoolService>();
 builder.Services.AddTransient<IStudentEnrollmentService, StudentEnrollmentService>();
+builder.Services.AddTransient<IStudentEnrollmentDetailService, StudentEnrollmentDetailService>();
 
 #endregion
 

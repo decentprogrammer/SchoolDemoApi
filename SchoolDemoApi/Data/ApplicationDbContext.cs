@@ -87,5 +87,6 @@ namespace SchoolDemoApi.Data
         public DbSet<School> Schools { get; set; }
         public DbSet<Section> Sections { get; set; }
         public DbSet<StudentEnrollment> StudentEnrollments { get; set; }
+        public DbSet<StudentEnrollmentDetail> StudentEnrollmentDetails { get; set; }
     }
 }
