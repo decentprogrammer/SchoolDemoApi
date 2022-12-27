@@ -22,13 +22,13 @@ namespace SchoolDemoApi.Controllers
         {
             var schools = (await _schoolService.GetSchools(false)).Select(x => new
             {
-                Id = x.SchoolId,
-                Name = x.SchoolName,
-                Level = x.Level,
+                SID = x.SchoolId,
+                SchoolName = x.SchoolName,
+                SchoolLevel = x.Level,
                 District = x.District,
                 UnionCouncil = x.Uc,
-                VisitDate = DateTime.Now,
-                UserId = 1
+                Tehsil = x.Tehsil,                
+                Quater = 1
             }).ToList();
             return new JsonResult(schools);
         }
@@ -41,13 +41,13 @@ namespace SchoolDemoApi.Controllers
             var school = (await _schoolService.GetSchoolById(id, false));            
             var item = new
             {
-                Id = school.SchoolId,
-                Name = school.SchoolName,
-                Level = school.Level,
+                SID = school.SchoolId,
+                SchoolName = school.SchoolName,
+                SchoolLevel = school.Level,
                 District = school.District,
-                UnionCouncil = school.Uc,
-                VisitDate = DateTime.Now,
-                UserId = 1
+                Tehsil = school.Tehsil,
+                UnionCouncil = school.Uc,                
+                Quater = 1
             };
             return new JsonResult(item);
         }
